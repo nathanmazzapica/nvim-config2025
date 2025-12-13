@@ -74,10 +74,31 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["blink.cmp"] = {
+    config = { "\27LJ\2\n´\2\0\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\14signature\1\0\1\fenabled\2\15appearance\1\0\2\28use_nvim_cmp_as_default\2\22nerd_font_variant\tmono\vkeymap\1\0\4\14signature\0\15appearance\0\vkeymap\0\fsources\0\1\0\1\vpreset\fdefault\nsetup\14blink.cmp\frequire\0" },
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/blink.cmp",
+    url = "https://github.com/saghen/blink.cmp"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["lazydev.nvim"] = {
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/lazydev.nvim",
+    url = "https://github.com/folke/lazydev.nvim"
+  },
+  ["mini.icons"] = {
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/mini.icons",
+    url = "https://github.com/nvim-mini/mini.icons"
   },
   neovim = {
     loaded = true,
@@ -93,6 +114,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["oil.nvim"] = {
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -137,6 +163,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: blink.cmp
+time([[Config for blink.cmp]], true)
+try_loadstring("\27LJ\2\n´\2\0\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\14signature\1\0\1\fenabled\2\15appearance\1\0\2\28use_nvim_cmp_as_default\2\22nerd_font_variant\tmono\vkeymap\1\0\4\14signature\0\15appearance\0\vkeymap\0\fsources\0\1\0\1\vpreset\fdefault\nsetup\14blink.cmp\frequire\0", "config", "blink.cmp")
+time([[Config for blink.cmp]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

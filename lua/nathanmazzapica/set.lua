@@ -29,3 +29,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "100"
+
+vim.api.nvim_create_autocmd("InsertEnter", { command = [[set norelativenumber]] })
+
+vim.api.nvim_create_autocmd("InsertLeave", { command = [[set relativenumber]] })

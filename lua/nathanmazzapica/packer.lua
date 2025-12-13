@@ -26,5 +26,39 @@ return require('packer').startup(function(use)
 	use('tpope/vim-fugitive')
 	use('neovim/nvim-lspconfig')
 
+    use('stevearc/oil.nvim')
+    use('nvim-mini/mini.icons')
+
+    use {
+        'folke/lazydev.nvim',
+    }
+
+    use {
+      'saghen/blink.cmp',
+      -- Build the plugin from source (requires Rust)
+      run = 'cargo build --release',
+      -- Essential dependency for snippets
+      requires = 'rafamadriz/friendly-snippets',
+      config = function()
+        require('blink.cmp').setup({
+          keymap = { preset = 'default' },
+
+          appearance = {
+            use_nvim_cmp_as_default = true,
+            nerd_font_variant = 'mono'
+          },
+
+          signature = { enabled = true },
+
+
+
+          -- Default list of enabled providers defined so that you can extend it
+          -- elsewhere in your config, without redefining it, due to `opts_extend`
+          sources = {
+            default = { 'lsp', 'path', 'snippets', 'buffer' },
+          },
+        })
+      end
+    }
 
 end)
