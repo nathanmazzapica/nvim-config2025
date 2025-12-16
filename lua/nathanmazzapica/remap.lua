@@ -5,12 +5,12 @@ vim.keymap.set("n", "<leader>ph", vim.cmd.help)
 
 vim.keymap.set("n", "<leader>phs", function()
     local search_term = vim.fn.input("Search: ")
-    vim.cmd.help({ args = {search_term} })
+    vim.cmd.help({ args = { search_term } })
 end)
 
 vim.keymap.set("n", "<leader>phv", function()
     local search_term = vim.fn.input("Search: ")
-    vim.cmd.help({ args = {search_term} })
+    vim.cmd.help({ args = { search_term } })
 end)
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -35,11 +35,11 @@ vim.keymap.set("n", "<leader>sc", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gcI<Left><Left
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
 
 vim.api.nvim_create_autocmd("TermOpen", {
-	group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
-	callback = function()
-		vim.opt.number = false
-		vim.opt.relativenumber = false
-	end,
+    group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
+    callback = function()
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+    end,
 })
 
 local job_id = 0
