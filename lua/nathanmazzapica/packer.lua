@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use 'nvim-tree/nvim-web-devicons'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use({
         'MeanderingProgrammer/render-markdown.nvim',
@@ -44,6 +45,12 @@ return require('packer').startup(function(use)
     use {
         'folke/lazydev.nvim',
     }
+
+    -- 1. The LSP Configuration base
+    use 'neovim/nvim-lspconfig'
+
+    -- 2. The VTSLS companion plugin (Highly Recommended)
+    use 'yioneko/nvim-vtsl'
 
     use {
         'saghen/blink.cmp',

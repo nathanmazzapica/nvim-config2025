@@ -1,9 +1,9 @@
 local function get_visual_text()
-    local s = vim.fn.getpos("'<")
-    local e = vim.fn.getpos("'>")
+    local s                     = vim.fn.getpos("'<")
+    local e                     = vim.fn.getpos("'>")
 
     local line_start, col_start = s[2], s[3]
-    local line_end,   col_end   = e[2], e[3]
+    local line_end, col_end     = e[2], e[3]
 
     -- Normalize reversed selection
     if line_start > line_end or (line_start == line_end and col_start > col_end) then

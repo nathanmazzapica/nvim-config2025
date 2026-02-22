@@ -33,7 +33,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>sc", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gcI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
-
 vim.api.nvim_create_autocmd("TermOpen", {
     group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
     callback = function()
@@ -66,3 +65,7 @@ vim.keymap.set("n", "<leader>tr", function()
 
     vim.fn.chansend(job_id, { current_command .. "\r\n" })
 end)
+
+vim.api.nvim_create_user_command('W', function()
+    vim.cmd('write')
+end, {})
