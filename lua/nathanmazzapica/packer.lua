@@ -32,8 +32,13 @@ return require('packer').startup(function(use)
     use 'rose-pine/neovim'
     use 'bluz71/vim-nightfly-colors'
 
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('nvim-treesitter/playground')
+    --use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+
+    use({
+        'nvim-treesitter/nvim-treesitter',
+        branch = 'main',
+    })
+    --use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
@@ -50,12 +55,14 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
 
     -- 2. The VTSLS companion plugin (Highly Recommended)
-    use 'yioneko/nvim-vtsl'
+    use 'yioneko/nvim-vtsls'
 
     use {
         'saghen/blink.cmp',
+        --        tag = 'v1.*',
+        branch = 'v1',
         -- Build the plugin from source (requires Rust)
-        run = 'cargo build --release',
+        --run = 'cargo build --release',
         -- Essential dependency for snippets
         requires = 'rafamadriz/friendly-snippets',
         config = function()
@@ -63,7 +70,7 @@ return require('packer').startup(function(use)
                 keymap = { preset = 'default' },
 
                 appearance = {
-                    use_nvim_cmp_as_default = true,
+                    --use_nvim_cmp_as_default = true,
                     nerd_font_variant = 'mono'
                 },
 
@@ -79,4 +86,15 @@ return require('packer').startup(function(use)
             })
         end
     }
+    use {
+        "jim-at-jibba/micropython.nvim",
+        requires = {
+            "akinsho/toggleterm.nvim",
+            "stevearc/dressing.nvim",
+        },
+        config = function()
+            require("micropython_nvim").setup()
+        end,
+    }
+    use { "ellisonleao/gruvbox.nvim" }
 end)

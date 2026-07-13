@@ -69,3 +69,57 @@ end)
 vim.api.nvim_create_user_command('W', function()
     vim.cmd('write')
 end, {})
+
+
+-- Upload current file
+vim.keymap.set("n", "<leader>mu", function()
+    vim.cmd("write")
+    vim.fn.system("mpremote fs cp " .. vim.fn.expand("%") .. " :" .. vim.fn.expand("%:t"))
+    print("Uploaded " .. vim.fn.expand("%:t"))
+end, { desc = "MicroPython Upload" })
+
+-- Reset the ESP32 (runs main.py)
+vim.keymap.set("n", "<leader>mr", function()
+    vim.fn.system("mpremote reset")
+    print("ESP32 Reset")
+end, { desc = "MicroPython Reset" })
+
+-- Open the MicroPython REPL
+vim.keymap.set("n", "<leader>mp", function()
+    vim.cmd("terminal mpremote repl")
+end, { desc = "MicroPython REPL" })
+
+-- Save, upload the current file to the ESP32, then reset it.
+vim.keymap.set("n", "<leader>ma", function()
+    -- Save the current buffer
+    vim.cmd("write")
+
+    local file = vim.fn.expand("%")
+    local name = vim.fn.expand("%:t")
+
+    -- Upload
+    local upload = vim.fn.system({
+        "mpremote",
+        "fs",
+        "cp",
+        file,
+        ":" .. name,
+    })
+
+    if vim.v.shell_error ~= 0 then
+        vim.notify("Upload failed:\n" .. upload, vim.log.levels.ERROR)
+        return
+    end
+
+    -- Reset the board (runs main.py)
+    local reset = vim.fn.system({ "mpremote", "reset" })
+
+    if vim.v.shell_error ~= 0 then
+        vim.notify("Reset failed:\n" .. reset, vim.log.levels.ERROR)
+        return
+    end
+
+    vim.notify("󰸞 Uploaded and restarted ESP32!", vim.log.levels.INFO)
+end, {
+    desc = "MicroPython: Save, Upload & Run",
+})

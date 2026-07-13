@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1744318430/share/lua/5.1/?.lua;/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1744318430/share/lua/5.1/?/init.lua;/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1744318430/lib/luarocks/rocks-5.1/?.lua;/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1744318430/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1744318430/lib/lua/5.1/?.so"
+local package_path_str = "/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1783773675/share/lua/5.1/?.lua;/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1783773675/share/lua/5.1/?/init.lua;/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1783773675/lib/luarocks/rocks-5.1/?.lua;/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1783773675/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/nathanm/.cache/nvim/packer_hererocks/2.1.1783773675/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -75,15 +75,30 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["blink.cmp"] = {
-    config = { "\27LJ\2\n´\2\0\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\14signature\1\0\1\fenabled\2\15appearance\1\0\2\28use_nvim_cmp_as_default\2\22nerd_font_variant\tmono\vkeymap\1\0\4\15appearance\0\vkeymap\0\14signature\0\fsources\0\1\0\1\vpreset\fdefault\nsetup\14blink.cmp\frequire\0" },
+    config = { "\27LJ\2\n›\2\0\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\14signature\1\0\1\fenabled\2\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\4\14signature\0\vkeymap\0\fsources\0\15appearance\0\1\0\1\vpreset\fdefault\nsetup\14blink.cmp\frequire\0" },
     loaded = true,
     path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/blink.cmp",
     url = "https://github.com/saghen/blink.cmp"
+  },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   harpoon = {
     loaded = true,
@@ -94,6 +109,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/lazydev.nvim",
     url = "https://github.com/folke/lazydev.nvim"
+  },
+  ["micropython.nvim"] = {
+    config = { "\27LJ\2\n>\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\21micropython_nvim\frequire\0" },
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/micropython.nvim",
+    url = "https://github.com/jim-at-jibba/micropython.nvim"
   },
   ["mini.icons"] = {
     loaded = true,
@@ -115,10 +136,10 @@ _G.packer_plugins = {
     path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-vtsl"] = {
+  ["nvim-vtsls"] = {
     loaded = true,
-    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/nvim-vtsl",
-    url = "https://github.com/yioneko/nvim-vtsl"
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/nvim-vtsls",
+    url = "https://github.com/yioneko/nvim-vtsls"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -134,11 +155,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  playground = {
-    loaded = true,
-    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -157,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/Users/nathanm/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
@@ -183,8 +204,12 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: blink.cmp
 time([[Config for blink.cmp]], true)
-try_loadstring("\27LJ\2\n´\2\0\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\14signature\1\0\1\fenabled\2\15appearance\1\0\2\28use_nvim_cmp_as_default\2\22nerd_font_variant\tmono\vkeymap\1\0\4\15appearance\0\vkeymap\0\14signature\0\fsources\0\1\0\1\vpreset\fdefault\nsetup\14blink.cmp\frequire\0", "config", "blink.cmp")
+try_loadstring("\27LJ\2\n›\2\0\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\14signature\1\0\1\fenabled\2\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\4\14signature\0\vkeymap\0\fsources\0\15appearance\0\1\0\1\vpreset\fdefault\nsetup\14blink.cmp\frequire\0", "config", "blink.cmp")
 time([[Config for blink.cmp]], false)
+-- Config for: micropython.nvim
+time([[Config for micropython.nvim]], true)
+try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\21micropython_nvim\frequire\0", "config", "micropython.nvim")
+time([[Config for micropython.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

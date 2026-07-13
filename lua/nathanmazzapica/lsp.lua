@@ -37,6 +37,34 @@ local capabilities = require('blink.cmp').get_lsp_capabilities()
 --lspconfig.gopls.setup({
 --  capabilities = capabilities,
 --})
+--
+
+-- Python / Micropython
+
+vim.lsp.config('pyright', {
+    capabilities = capabilities,
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = "basic",
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = "workspace",
+                diagnosticSeverityOverrides = {
+                    reportMissingModuleSource = "none",
+                    reportMissingImports = "none",
+                },
+                extraPaths = {
+                    vim.fn.expand("~/.local/lib/python3.12/site-packages"),
+                    "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages",
+                    "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages",
+                },
+            },
+        },
+    },
+})
+
+vim.lsp.enable('pyright')
 
 -- 5. Configure Diagnostics (The error text)
 vim.diagnostic.config({
